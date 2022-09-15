@@ -60,7 +60,7 @@ const articles = [
     {
     
     title:"Stargaze",
-    photo:"https://hiddengemteam.com/wp-content/uploads/2022/02/stargaze.jpg",
+    photo:"https://chaindebrief.com/wp-content/uploads/2022/02/powering-interchain-nftS-on-web3.0-1024x576.png",
     logo:"https://s2.coinmarketcap.com/static/img/coins/200x200/16842.png",
     description:"A decentralized, community-owned NFT Layer 1 chain and marketplace with CosmWasm smart contracts. 100% carbon neutral. Zero gas.",
     tags:["all","chain","nfts","stargaze"],
@@ -68,13 +68,13 @@ const articles = [
     },
     {
     
-        title:"Umee",
-        photo:"https://pbs.twimg.com/media/FbF_fIRUEAQrDss?format=jpg&name=large",
-        logo:"https://imgs.search.brave.com/iIq6clqLDbvmunJrebOsKveFJNh3EBZFGaESan91v-o/rs:fit:250:218:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuY29pbmNvc3Qu/bmV0L2xvZ28vY3J5/cHRvY3VycmVuY3kv/dW1lZS5wbmc",
-        description:"Simplest way to start your DeFi experience for staking, rates, and interoperable solutions across blockchains. Borrow and lend today",
-        tags:["all","chain","defi","moneymarket","umee"],
-        link:"https://umee.cc/",
-        },
+    title:"Umee",
+    photo:"https://pbs.twimg.com/media/FbF_fIRUEAQrDss?format=jpg&name=large",
+    logo:"https://imgs.search.brave.com/iIq6clqLDbvmunJrebOsKveFJNh3EBZFGaESan91v-o/rs:fit:250:218:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuY29pbmNvc3Qu/bmV0L2xvZ28vY3J5/cHRvY3VycmVuY3kv/dW1lZS5wbmc",
+    description:"Simplest way to start your DeFi experience for staking, rates, and interoperable solutions across blockchains. Borrow and lend today",
+    tags:["all","chain","defi","moneymarket","umee"],
+    link:"https://umee.cc/",
+    },
 
     {
         
@@ -249,7 +249,7 @@ function makeArticle (index){
 
 
 
-    
+var listOfElements = [];
     
 //makes all the articles in the database
 
@@ -258,12 +258,19 @@ function displayAllArticles(){
     for (let i = 0; i < articles.length ; i++){
     
         makeArticle(i)
-    
+        listOfElements.push(articles[i].title)
+
     }
+
+
+    listOfElements.sort((a, b) => a.localeCompare(b));
 
 }
 
+
+
 displayAllArticles();
+
 
 
 
@@ -295,11 +302,6 @@ function links () {
     }
 
 links();
-    
-    
-
-  
-    
     
 
 
@@ -379,89 +381,101 @@ function hidelist (epic) {
 
 
 }
-     
+    
+
+
+
+
 function displaySearch (epic) {
 
     let epicEvent = epic;
+    let articleIndexAndTitle = []
 
     for(let i = 0; i < articles.length ; i++){
     
         let articleTags = articles[i].tags.toString();
         let targeter = epicEvent.classList[2];
-
         let searchResults = articleTags.includes(targeter);
-    
 
         if (searchResults == true){
             
-            makeArticle(i)
-    
+            let articleIndex = i;
+            let articleName = articles[i].title
+            let articleIndexAndObject = {index:articleIndex,name:articleName}
+
+            articleIndexAndTitle.push(articleIndexAndObject)
+
+
+            
+
+            // aToZ(articleIndexAndTitle)
+
+            sortSwitch(articleIndexAndTitle)
+            
+
         }
     
+
+
+    }
+
+
+    for(let i = 0; i < articleIndexAndTitle.length ; i++){
+
+        makeArticle(articleIndexAndTitle[i].index)
+
     }
 
     links();
 
 
-
-
 }
 
 
 
-function tagIndexLogic (epic){
-
-    let epicEvent = epic;
-
-    grid.innerHTML = " ";
-
- 
-
-    
-    if (listtoggle == true){
-    
-        //open list
-        listtoggle = !listtoggle;
-    
-        if (epicEvent.classList[1] != "searchbar"){
-
-            showlist(epic);
-
-        } else {
-            displaySearch(epic);
-        }
-    
-    
-    
-    } else if (listtoggle == false){
-    
-        //close list
 
 
-        listtoggle = !listtoggle;
-    
-        
-        if (epicEvent.classList[1] != "searchbar"){
-            hidelist (epic)
-        } 
 
 
-        displaySearch(epic);
-        
-    
-            epicEvent.classList.remove("hide");
 
 
-    
+
+
+function sortSwitch (articleIndexAndTitle){
+
+
+
+
+    switch(sortToggle) {    
+        case "default": 
+        answer = aToZ (articleIndexAndTitle);
+        break;
+      case "atoz": 
+        answer = aToZ (articleIndexAndTitle);
+        break;
+      case "ztoa": 
+        answer = zToA (articleIndexAndTitle);
+        break;
     }
-    
-
-
+    return answer;
 }
 
 
 
-/*
+function aToZ (articleIndexAndTitle){
+
+   return articleIndexAndTitle.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+
+function zToA (articleIndexAndTitle){
+
+    return articleIndexAndTitle.sort((a, b) => a.name.localeCompare(b.name)).reverse()
+ 
+}
+
+
+let sortToggle = "default";
 
 
 const sortbtn = document.querySelectorAll(".sortbtn")
@@ -474,16 +488,23 @@ sortbtn.forEach( function (btns){
 
         sortIndexing(epicEvent);
 
+
+
+        sortToggle = epicEvent.classList[2]
+
+
+
+
+
     })
 
 });
 
 
-
 function sortIndexing (epic){
 
     
-    grid.innerHTML = " ";
+    // grid.innerHTML = " ";
     let epicEvent = epic;
 
 
@@ -492,10 +513,10 @@ function sortIndexing (epic){
     
         //open list
         listtoggle = !listtoggle;
-    
+        showlist(epic);
 
-            showlist(epic);
-            displaySearch(epic);
+
+        //maybe insert function that organized list in open list toggle
 
     
     
@@ -506,13 +527,77 @@ function sortIndexing (epic){
 
 
         listtoggle = !listtoggle;
-    
+        hidelist (epic)
+        epicEvent.classList.remove("hide");
+
+        //maybe insert function that organized list in close list toggle
         
 
-        hidelist (epic)
-        displaySearch(epic);
+
         
+    }
+    
+
+//run tag search again
+
+
+// tagIndexLogic(lastMoveHistory)
+
+}
+
+
+
+
+
+
+
+function tagIndexLogic (epic){
+
+    let epicEvent = epic;
+
+   
+
+    console.log(epicEvent)
+    
+    if (listtoggle == true){
+    
+        //open list
+        listtoggle = !listtoggle;
+    
+        if (epicEvent.classList[1] != "searchbar"){
+
+            showlist(epic);
+
+        }
+            // displaySearch(epic);
+            
+    
+    
+    
+    } else if (listtoggle == false){
+    
+        //close list
+
+
+        listtoggle = !listtoggle;
+    
+        grid.innerHTML = " ";
+
+        
+        if (epicEvent.classList[1] != "searchbar"){
+
+            hidelist (epic)
+
+        };
+
+
+        displaySearch(epic);
         epicEvent.classList.remove("hide");
+
+
+        
+    
+
 
 
     
@@ -520,13 +605,32 @@ function sortIndexing (epic){
     
 
 
-
+ 
 }
 
 
 
 
-*/
+
+
+
+
+//sort tag functions below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -542,6 +646,11 @@ function sortIndexing (epic){
 //Sort Button
     //make sorting algorithms like A-Z, Z-A, 
     //
-//make a favorites feature
+
+
+//make a favorites star feature
+//make launch and info buttons
+//when clicking any filter buttons reset the others
+
 //make our theme, and juno, osmosis, etc chain themes
 //make a Nav, name logo top left, right explore
