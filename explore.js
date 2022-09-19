@@ -1,3 +1,8 @@
+
+console.log("ready for Blast Off!")
+
+
+
 //This is the Database
 const articles = [
 
@@ -189,7 +194,10 @@ const articles = [
     ];
     
     
-/*
+/*\
+
+format
+
 {
     title:"Name",
     photo:"",
@@ -288,9 +296,60 @@ function makeArticle (index){
 
 
 
+// function createSortButtons (){
+
+
+//     const buttonstag = document.getElementById("buttons");
+
+//     const btnDiv = document.createElement("div");
+//     btnDiv.className = "dropdown general";
+//     buttonstag.appendChild(btnDiv);
+
+//     const span = document.createElement("span");
+//     span.className = "dropbtn general all selected";
+//     span.innerText = "All";
+//     btnDiv.appendChild(span)
+
+//     const ul = document.createElement("ul");
+//     btnDiv.appendChild(ul)
+
+//     const li = document.createElement("li");
+//     li.className = "dropbtn general favorties hide";
+//     li.innerHTML = "Favorties";
+//     ul.appendChild(li);
+
+//     const li1 = document.createElement("li");
+//     li1.className = "dropbtn general custom1 hide";
+//     li1.innerHTML = "Custom 1";
+//     ul.appendChild(li1);
+
+//     const li2 = document.createElement("li");
+//     li2.className = "dropbtn general custom2 hide";
+//     li2.innerHTML = "Diegos Defi";
+//     ul.appendChild(li2);
+
+//     const li3 = document.createElement("li");
+//     li3.className = "dropbtn general custom2 hide";
+//     li3.innerHTML = "Diegos Defi";
+//     ul.appendChild(li3);
+
+// }
+
+// createSortButtons();
+
+
+
+
+
+
+
+
 
     
 //makes all the articles in the database
+
+
+
 
 function displayAllArticles(){
 
@@ -396,7 +455,7 @@ searchinput.addEventListener("input", function(e){
 function showlist (epic) {
     
     let epicEvent = epic;
-    let eventarray = epicEvent.parentNode.childNodes
+    let eventarray = epicEvent.parentNode.childNodes[3].childNodes
 
     //go through them and remove
     
@@ -405,12 +464,13 @@ function showlist (epic) {
 
     for (let i = 1; i <= eventarray.length - 2; i += 2){
                 
-        let targetevent = epicEvent.parentNode.childNodes[i].classList;
-        
+        let targetevent = epicEvent.parentNode.childNodes[3].childNodes[i].classList;
+    
             targetevent.remove("hide")
 
         }
     }
+
     
 function hidelist (epic) {
 
@@ -523,6 +583,9 @@ function zToA (articleIndexAndTitle){
 }
 
 
+
+
+
 let sortToggle = "default";
 
 
@@ -548,7 +611,6 @@ sortbtn.forEach( function (btns){
 
 });
 
-
 function sortIndexing (epic){
 
     
@@ -563,7 +625,7 @@ function sortIndexing (epic){
         listtoggle = !listtoggle;
         showlist(epic);
 
-
+        console.log("its true")
         //maybe insert function that organized list in open list toggle
 
     
@@ -576,20 +638,38 @@ function sortIndexing (epic){
 
         listtoggle = !listtoggle;
         hidelist (epic)
-        epicEvent.classList.remove("hide");
+        // epicEvent.classList.remove("hide");
 
-        //maybe insert function that organized list in close list toggle
+
+        console.log(epicEvent.parentNode.childNodes[3])
+
+
+        if (epicEvent.classList[3] == "selected"){
+
+
+            epicEvent.classList.remove("hide")
+            epicEvent.parentNode.childNodes[3].classList.remove("hide")
+
+
+
+            let eventarray = epicEvent.parentNode.childNodes[3].childNodes
+
+            for (let i = 1; i <= eventarray.length - 2; i += 2){
         
+                epicEvent.parentNode.childNodes[3].childNodes[i].className += " hide";
+        
+                }
 
+
+        } else {
+
+            let textSwapper = epicEvent.textContent
+            epicEvent.parentNode.parentNode.childNodes[1].innerHTML = textSwapper;
+
+        }
 
         
     }
-    
-
-//run tag search again
-
-
-// tagIndexLogic(lastMoveHistory)
 
 }
 
@@ -609,8 +689,6 @@ function tagIndexLogic (epic){
         listtoggle = !listtoggle;
 
 
-        //lets reset our options
-        
 
 
 
@@ -620,6 +698,7 @@ function tagIndexLogic (epic){
             showlist(epic);
 
         }
+
             
     
     
@@ -634,23 +713,50 @@ function tagIndexLogic (epic){
         grid.innerHTML = " ";
 
         
-        if (epicEvent.classList[1] != "searchbar"){
+        if (epicEvent.classList[1] != "searchbar" ){
 
             hidelist (epic)
 
-        };
+        }
+
+
+     
+
+        if (epicEvent.classList[3] == "selected"){
+
+
+            epicEvent.classList.remove("hide")
+            epicEvent.parentNode.childNodes[3].classList.remove("hide")
+
+
+
+            let eventarray = epicEvent.parentNode.childNodes[3].childNodes
+
+            for (let i = 1; i <= eventarray.length - 2; i += 2){
+        
+                epicEvent.parentNode.childNodes[3].childNodes[i].className += " hide";
+        
+                }
+
+
+        } else {
+
+            let textSwapper = epicEvent.textContent
+            epicEvent.parentNode.parentNode.childNodes[1].innerHTML = textSwapper;
+
+        }
+
+
+
+
+
+
+
+
+
 
 
         displaySearch(epic);
-        epicEvent.classList.remove("hide");
-
-
-        
-    
-
-
-
-    
     }
     
 
@@ -749,11 +855,19 @@ const styleTag = document.createElement("style");
 //make a favorites star feature
 //make launch and info buttons
 //when clicking any filter buttons reset the others
+    //make a make tagbutton function
+
+//add a "explore Blocks" block explorer to the side
+
 
 //flip the cards to learn about more,
     //chains has token, mcap, volume, chart, rank
     //smartcontracts has home, token, 
     //nfts has amount floor etc
 
+//make a homepage dashboard
+    //chain dashboard has price chart, volume, ticker, etc
+
+//make a trending tag
 //make our theme, and juno, osmosis, etc chain themes
 //make a Nav, name logo top left, right explore
