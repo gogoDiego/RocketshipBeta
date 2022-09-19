@@ -22,28 +22,32 @@
     <div class="navdiv">
 
 
+
+
+
         <div class="navlogodiv">
 
             <!-- <img src="https://app.osmosis.zone/_next/image?url=%2Fosmosis-logo-main.svg&w=384&q=75" alt=""> -->
 
-            <img src="rocketshiplogowhite.png" alt="">
+            <img src="/Rocketship/rocketshiplogowhite.png" alt="">
     
             <i class="fa-solid fa-rocket"></i>
 
         </div>
 
-        <buttons>
+        <buttons id="buttons">
 
-
-    
+            
             <div class="dropdown general">
     
+                <span class="dropbtn general all selected">
+                    All
+                </span>
+
+
                 <ul>
-                    <li class="dropbtn general all mainmenu ">
-                        All
-                    </li>
     
-                    <li class="dropbtn general Favorties hide">
+                    <li class="dropbtn general favorties hide">
                         Favorties
                     </li>
     
@@ -55,22 +59,24 @@
                         Diegos Defi 
                     </li>
     
-                    <li class="dropbtn general custom2 hide" >
+                    <li class="dropbtn general custom2 hide " >
                         CryptoCitos Fav 
                     </li>
+                    
                 </ul>
                 
             </div>
     
             <div class="dropdown catagories">
     
+                <span class="dropbtn catagories all selected">
+                    Catagories
+                </span>
+
                 <ul>
-                    <li class="dropbtn catagories all mainmenu ">
-                        Catagories
-                    </li>
     
-                    <li class="dropbtn catagories chain hide">
-                        Chain
+                    <li class="dropbtn catagories chain hide ">
+                        Chains
                     </li>
     
                     <li class="dropbtn catagories defi hide">
@@ -96,16 +102,18 @@
                     <li class="dropbtn catagories bridge hide" >
                         Bridges
                      </li>
+
                 </ul>
                 
             </div>
     
             <div class="dropdown chains">
     
+                <span class="dropbtn chains chain selected">
+                    Chain
+                </span>
+                
                 <ul>
-                    <li class="dropbtn chains chain mainmenu ">
-                        Chain
-                    </li>
     
                     <li class="dropbtn chains juno hide">
                         Juno
@@ -151,13 +159,14 @@
                 </ul>
                 
             </div>
-    
+
             <div class="dropdown deficat">
 
+                <span class="dropbtn deficat defi selected">
+                    Defi
+                </span>
+
                 <ul>
-                    <li class="dropbtn deficat defi mainmenu ">
-                        Defi
-                    </li>
     
                     <li class="dropbtn deficat dex hide">
                         Dexes
@@ -175,11 +184,11 @@
                         Synthetics
                     </li>
     
-                    <li class="dropbtn deficat orderbook hide" >
+                    <li class="dropbtn deficat orderbook hide " >
                         OrderBook
                     </li>
     
-                    <li class="dropbtn deficat liquidstaking hide" >
+                    <li class="dropbtn deficat liquidstaking hide " >
                         Liquid Staking
                     </li>
     
@@ -187,6 +196,7 @@
                 
             </div>
     
+
             <div class="searchdiv">
     
                 <input type="search" placeholder="Search" id="search" class="searchbtn searchbar " >
@@ -198,22 +208,24 @@
     
             <div class="dropsort sort">
     
-                <i class="fa-solid fa-filter" id="filtericon" > </i>
+                <span class="sortbtn sortlist default selected">
+                    <i class="fa-solid fa-filter" id="filtericon" > </i>
+                    Sort by
+                </span>
+          
     
                 <ul>
                    
-                    <li class="sortbtn sortlist default mainmenu"> Sort by</li>
                     <li class="sortbtn sortlist atoz hide" >A-Z</li>
                     <li class="sortbtn sortlist ztoa hide" >Z-A</li>
                     <li class="sortbtn sortlist mostpopular hide">Most Popular</li>
                     <li class="sortbtn sortlist mosttvl hide">Most TVL</li>
     
                 </ul>
-            </div>
+
+            </div> 
     
-    
-        
-    
+
         </buttons>
 
         <div class="setupdiv">
@@ -225,10 +237,11 @@
         </div>
  
 
+
+
+
+
     </div>
-
-
-
 
 </nav>
 
