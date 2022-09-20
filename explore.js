@@ -855,7 +855,9 @@ const styleTag = document.createElement("style");
 //make a favorites star feature
 //make launch and info buttons
 //when clicking any filter buttons reset the others
-    //make a make tagbutton function
+
+
+//add outline to article images
 
 //add a "explore Blocks" block explorer to the side
 
