@@ -1,4 +1,3 @@
-
 console.log("ready for Blast Off!")
 
 
@@ -8,11 +7,24 @@ const articles = [
 
     {
     title: "Osmosis",
-    photo:"https://imgs.search.brave.com/KIchLk0I-pV2CTrUWc91XG6nD8dm5UT9CNHYfyaHiYg/rs:fit:1200:720:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS92/M2xJbnhfMTVoOC9t/YXhyZXNkZWZhdWx0/LmpwZw",
-    logo:"https://app.osmosis.zone/_next/image?url=%2Fosmosis-logo-main.svg&w=384&q=75",
+    ticker: "OSMO",
     description: "The Interchain Dex of The Cosmos Ecosystem",
+    logo:"https://app.osmosis.zone/_next/image?url=%2Fosmosis-logo-main.svg&w=384&q=75",
+    photo:"https://imgs.search.brave.com/KIchLk0I-pV2CTrUWc91XG6nD8dm5UT9CNHYfyaHiYg/rs:fit:1200:720:1/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS92/M2xJbnhfMTVoOC9t/YXhyZXNkZWZhdWx0/LmpwZw",
     tags:["all","chain","dex","defi","osmosis"],
+    stats: {mcap:"$570M",liquidity:"$104.65M",volume:"$18.10M",price:"$1.25"},
+    governance: [["Prop #333: Signalling Proposal for OSMO/AXL incentivised pool", "Live"],["Prop #329: Signaling Proposal for ATOM/stATOM Incentivised Pool", "Passed"]],
+    staking:[["Delagate 24.58% APR","https://wallet.keplr.app/chains/osmosis"],["SuperFluid APR Varies","https://app.osmosis.zone/pool/1"]],
     link:"https://app.osmosis.zone/",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
     theme: `
     --backgroundColor:#170F34;
     --navbarcolor:#2d2755; 
@@ -29,11 +41,26 @@ const articles = [
     
     {
     title:"Juno",
-    photo:"https://user-images.githubusercontent.com/79812965/131373443-5ff0d9f6-2e2a-41bd-8347-22ac4983e625.jpg",
-    logo:"https://juno.disperze.network/_nuxt/img/logo.c1847d9.svg",
+    ticker:"JUNO",
     description:"A decentralized, public, permission-less network for cross-chain smartcontracts.",
+    logo:"https://juno.disperze.network/_nuxt/img/logo.c1847d9.svg",
+    photo:"https://user-images.githubusercontent.com/79812965/131373443-5ff0d9f6-2e2a-41bd-8347-22ac4983e625.jpg",
     tags:["all","chain","smartcontracts","juno"],
+    stats: {mcap:"$275M",liquidity:"$4.98M",volume:"$1.17M",price:"$4.56"},
+    governance: [["#40 Juno V10 Upgrade", "Live"],["#39 Komple Framework, KompleJS & Marketplace Builder Proposal", "Passed"]],
+    staking:[["Delagate 82.21% APR","https://wallet.keplr.app/chains/juno"],["Liquid 86.31% APR","https://juno.stakeeasy.finance/"]],
     link:"https://www.junonetwork.io/",
+    resources:[
+    ["Website","https://www.junonetwork.io/"],
+    ["Twitter","https://twitter.com/JunoNetwork"],
+    ["Medium","https://medium.com/@JunoNetwork"],
+    ["Telegram","https://t.me/JunoNetwork"],
+    ["Discord","https://discord.com/invite/Juno"],
+    ["Github","https://discord.com/invite/Juno"],
+    ["Documentation", "https://docs.junonetwork.io/juno/readme"],
+    ["Reddit", "https://www.reddit.com/r/JunoNetwork/"],
+],
+
     theme:`
     --backgroundColor:#170F34;
     --navbarcolor:#2d2755; 
@@ -292,7 +319,251 @@ function makeArticle (index){
 
 }
     
+
+
+const dashboard = document.getElementsByTagName("dashboard")[0];
+
+function makeChainDash (chain) {
+
+    let picker = chain;
+
+    const dashdiv = document.createElement("div");
+    dashdiv.className = "chainexplorer";
+    dashboard.appendChild(dashdiv);
+
+    //creates the Title of Dash
+        const titlediv = document.createElement("div");
+        titlediv.className = "chaintitle";
+        dashdiv.appendChild(titlediv);
+
+        const chainlogo = document.createElement("img");
+        chainlogo.src = articles[picker].logo;
+        titlediv.appendChild(chainlogo);
+
+        const chainstats = document.createElement("h1");
+        chainstats.innerHTML = "Chain Stats";
+        titlediv.appendChild(chainstats);
+
+
+    //creates the token Anaylitics
+
+
+    const statsmaindiv = document.createElement("div");
+    statsmaindiv.className = "chaininfo";
+    dashdiv.appendChild(statsmaindiv);
+
+
+
+
+    //token analitics
+    const chaintokenstats = document.createElement("div");
+    chaintokenstats.className = "chaintokenstats";
+    statsmaindiv.appendChild(chaintokenstats);
+
+        const tokenstats = document.createElement("div");
+        tokenstats.className = "tokenstats";
+        chaintokenstats.appendChild(tokenstats);
+
+        const ticker = document.createElement("h2");
+        ticker.innerHTML = "$" + articles[picker].ticker; 
+        tokenstats.appendChild(ticker);
+
+        const mcap = document.createElement("h4");
+        mcap.innerHTML = "MarketCap";
+        tokenstats.appendChild(mcap);
+
+        const mcapvalue = document.createElement("p");
+        mcapvalue.innerHTML = articles[picker].stats.mcap;
+        tokenstats.appendChild(mcapvalue);
+
+        const liquidity = document.createElement("h4");
+        liquidity.innerHTML = "Liquidity";
+        tokenstats.appendChild(liquidity);
+
+        const liquidityvalue = document.createElement("p");
+        liquidityvalue.innerHTML = articles[picker].stats.liquidity;
+        tokenstats.appendChild(liquidityvalue);
+
+        const volume = document.createElement("h4");
+        volume.innerHTML = "Volume";
+        tokenstats.appendChild(volume);
+
+        const volumevalue = document.createElement("p");
+        volumevalue.innerHTML = articles[picker].stats.volume;
+        tokenstats.appendChild(volumevalue);
+
+        const price = document.createElement("h4");
+        price.innerHTML = "Price";
+        tokenstats.appendChild(price);
+
+        const pricevalue = document.createElement("p");
+        pricevalue.innerHTML = articles[picker].stats.price;
+        tokenstats.appendChild(pricevalue);
     
+    const tempchartimage = document.createElement("img");
+    tempchartimage.src = "Rocketship chart demo.png"; //INSERT CODE FOR chart
+    tempchartimage.className = "tempchartimage";
+    chaintokenstats.appendChild(tempchartimage);
+
+
+
+    const govandstake = document.createElement("div");
+    govandstake.className = "govandstake";
+    statsmaindiv.appendChild(govandstake);
+
+
+        const chainoptions = document.createElement("div");
+        chainoptions.className = "chainoptions";
+        govandstake.appendChild(chainoptions);
+
+            const governance = document.createElement("h2");
+            governance.innerHTML = "Governance";
+            chainoptions.appendChild(governance);
+
+            const governanceicon = document.createElement("i");
+            governanceicon.className = "fa-solid fa-check-to-slot";
+            chainoptions.appendChild(governanceicon);
+
+        const govprop1 = document.createElement("div");
+        govprop1.className = "govprop";
+        govprop1.id = "govprop1";
+        govandstake.appendChild(govprop1);
+
+            const govpropdiv1 = document.createElement("div");
+            govpropdiv1.id = "govpropdiv1"; //maybe insert code idk
+            govprop1.appendChild(govpropdiv1);
+
+                const govpropicon = document.createElement("i");
+                govpropicon.className = "fa-solid fa-circle-exclamation";
+                govpropdiv1.appendChild(govpropicon);
+
+                const govproh3= document.createElement("h3");
+                govproh3.innerHTML = articles[picker].governance[0][1];
+                govpropdiv1.appendChild(govproh3);
+
+            const propname = document.createElement("p");
+            propname.innerHTML = articles[picker].governance[0][0].slice(0,65);
+            govprop1.appendChild(propname);
+
+            const govprop2 = document.createElement("div");
+            govprop2.className = "govprop";
+            govprop2.id = "govprop2";
+            govandstake.appendChild(govprop2);
+
+                const govpropdiv2 = document.createElement("div");
+                govpropdiv2.id = "govpropdiv2"; //maybe insert code idk
+                govprop2.appendChild(govpropdiv2);
+
+                    const govpropicon2 = document.createElement("i");
+                    govpropicon2.className = "fa-solid fa-circle-exclamation";
+                    govpropdiv2.appendChild(govpropicon2);
+
+                    const govproh32= document.createElement("h3");
+                    govproh32.innerHTML = articles[picker].governance[1][1];
+                    govpropdiv2.appendChild(govproh32);
+
+                const propname2 = document.createElement("p");
+
+                propname2.innerHTML = articles[picker].governance[1][0].slice(0,65);;
+                govprop2.appendChild(propname2);
+
+
+
+        const staking = document.createElement("div");
+        staking.id = "staking"; 
+        govandstake.appendChild(staking);
+
+            const stakingdiv = document.createElement("div");
+            stakingdiv.className = "chainoptions chainstaking"; 
+            staking.appendChild(stakingdiv);
+
+            const stakingh2 = document.createElement("h2");
+            stakingh2.innerHTML = "Staking"; 
+            stakingdiv.appendChild(stakingh2);
+
+            const stakingicon = document.createElement("i");
+            stakingicon.className = "fa-solid fa-lock";
+            stakingdiv.appendChild(stakingicon);
+
+            const chainstakingapr = document.createElement("div");
+            chainstakingapr.className = "chainstakingapr";
+            staking.appendChild(chainstakingapr);       
+
+                const stakingbtn1 = document.createElement("button");
+                stakingbtn1.id = "stakebtn1";
+                chainstakingapr.appendChild(stakingbtn1);
+
+                    const stakingp1 = document.createElement("p");
+                    stakingp1.innerHTML = articles[picker].staking[0][0]
+                    stakingbtn1.appendChild(stakingp1);
+
+                const stakingbtn2 = document.createElement("button");
+                stakingbtn2.id = "stakebtn2";
+                chainstakingapr.appendChild(stakingbtn2);
+
+ 
+
+                    const stakingp2 = document.createElement("p");
+                    stakingp2.innerHTML = articles[picker].staking[1][0]
+                    stakingbtn2.appendChild(stakingp2);
+
+    const chainresources = document.createElement("div");
+    chainresources.className = "chainresources";
+    statsmaindiv.appendChild(chainresources);
+
+        const resourcestitle = document.createElement("h2");
+        resourcestitle.innerHTML = "Resources";
+        chainresources.appendChild(resourcestitle);
+
+        const resourceslist = document.createElement("ul");
+        resourceslist.className = "resourceslist";
+        chainresources.appendChild(resourceslist);
+
+        function createResourceLi (item){
+
+            const resourceslistitem = document.createElement("li");
+            resourceslistitem.innerHTML = articles[picker].resources[item][0];
+
+            //create logic to make it a clickable link
+            // resourceslistitem.link = articles[picker].resources[item][1];
+            resourceslist.appendChild(resourceslistitem);
+
+        }
+
+        let resourcearray = articles[picker].resources
+
+        for (let i = 0; i <= resourcearray.length - 1 ; i++){
+
+
+        createResourceLi(i)
+
+
+        }
+
+
+
+
+
+        const resourcesblockdiv = document.createElement("div");
+        resourcesblockdiv.classList = "resourcesblockdiv";
+        chainresources.appendChild(resourcesblockdiv);
+
+
+            const exploreblocksresource = document.createElement("button");
+            exploreblocksresource.innerHTML = "Explore Blocks";
+            resourcesblockdiv.appendChild(exploreblocksresource);
+
+
+
+}
+
+
+// makeChainDash(1);
+
+
+
+
+
 
 
 
@@ -408,28 +679,50 @@ links();
 
 
 
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
 const dropbtn = document.querySelectorAll(".dropbtn")
 let listtoggle = true;
 
 
+
 dropbtn.forEach( function (btns){
+
+    console.log(btns)
+
     
-    btns.addEventListener("click", function (e) {
+
+   btns.addEventListener("click", function (e) {
+
 
         epicEvent = e.currentTarget;
 
-        console.log(epicEvent)
-
         tagIndexLogic(epicEvent);
 
+        
     })
 
 });
 
 
-const searchinput = document.getElementById("search")
+const searchinput = document.getElementById("search");
 
 searchinput.addEventListener("input", function(e){
+
+
 
 
     let input = e.currentTarget.value.toLowerCase().trim();
@@ -549,6 +842,8 @@ function displaySearch (epic) {
 
 
 
+
+
 function sortSwitch (articleIndexAndTitle){
 
 
@@ -599,13 +894,7 @@ sortbtn.forEach( function (btns){
 
         sortIndexing(epicEvent);
 
-
-
         sortToggle = epicEvent.classList[2]
-
-
-
-
 
     })
 
@@ -625,7 +914,6 @@ function sortIndexing (epic){
         listtoggle = !listtoggle;
         showlist(epic);
 
-        console.log("its true")
         //maybe insert function that organized list in open list toggle
 
     
@@ -853,13 +1141,7 @@ const styleTag = document.createElement("style");
 //To do list 
 
 //make a favorites star feature
-//make launch and info buttons
 //when clicking any filter buttons reset the others
-
-
-//add outline to article images
-
-//add a "explore Blocks" block explorer to the side
 
 
 //flip the cards to learn about more,
@@ -867,9 +1149,21 @@ const styleTag = document.createElement("style");
     //smartcontracts has home, token, 
     //nfts has amount floor etc
 
+    //make explore blocks clickable
+
 //make a homepage dashboard
     //chain dashboard has price chart, volume, ticker, etc
 
 //make a trending tag
 //make our theme, and juno, osmosis, etc chain themes
-//make a Nav, name logo top left, right explore
+
+//Chain Dashboard
+    //make token chart
+    //make governance clickable
+    //make staking buttons clickable
+    //make resources clickable
+
+
+
+//bugs
+    //fix search bug, when searching "all" btn dissapears
