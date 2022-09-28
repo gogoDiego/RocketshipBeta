@@ -512,7 +512,7 @@ function makeChainDash (chain) {
         tokenstats.appendChild(pricevalue);
     
     const tempchartimage = document.createElement("img");
-    tempchartimage.src = "Rocketship chart demo.png"; //INSERT CODE FOR chart
+    tempchartimage.src = "demochart.png"; //INSERT CODE FOR chart
     tempchartimage.className = "tempchartimage";
     chaintokenstats.appendChild(tempchartimage);
 
