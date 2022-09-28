@@ -25,17 +25,6 @@ const articles = [
         ["Github","https://github.com/osmosis-labs/osmosis"],
         ["Documentation", "https://docs.osmosis.zone/"],
         ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
-    theme: `
-    --backgroundColor:#170F34;
-    --navbarcolor:#2d2755; 
-    
-    --boxcolor:#3c356c;
-    --lighterbackfill: #3c356c;
-    
-    --fontcolor:rgb(255, 255, 255);
-    --accentoutline: #756b95;
-    
-    `,
 
     },
     
@@ -61,38 +50,54 @@ const articles = [
     ["Reddit", "https://www.reddit.com/r/JunoNetwork/"],
 ],
 
-    theme:`
-    --backgroundColor:#170F34;
-    --navbarcolor:#2d2755; 
-    
-    --boxcolor:#3c356c;
-    --lighterbackfill: #3c356c;
-    
-    --fontcolor:rgb(255, 255, 255);
-    --accentoutline: #756b95;
-    
-    `,
-
     },
     
     {
     
     title:"Cresent",
+    ticker:"CRE",
+    description:"Innovating DeFi investment through advancements InterBlockchain Tech",
     photo:"https://static-resources.crescent.network/OG-landing.jpeg",
     logo:"https://crescent.network/static/media/crescent_logo.c16ebd6e40d82c2ba862decaf3037a97.svg",
-    description:"Innovating DeFi investment through advancements InterBlockchain Tech",
-    tags:["all","chain","dex","defi","orderbook"],
+    tags:["all","chain","dex","defi","orderbook","cresentnetwork","cresent"],
+    stats: {mcap:"$29M",liquidity:"$3.19M",volume:"$10.87K",price:"$0.20"},
+    governance: [["#21 Confirm Smart Stake as Crescent Liquid Staking Validator", "Passed"],["#20 Approve Smart Stake as Crescent Liquid Staking Validator", "Passed"]],
+    staking:[["Liquid 25.57% APR","https://app.crescent.network/staking"],["unstake", "https://app.crescent.network/staking"]],
     link:"https://app.crescent.network/orderbook",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
+
     },
     
     {
     
     title:"Akash",
+    ticker:"AKT",
+    description:"Decentralized Cloud Computing, for the Decentralized Web",
     photo:"https://imgs.search.brave.com/k4Op2fgz8QW7I9ppEM6FYu5VJYaFNY921WRFCxdqVek/rs:fit:750:440:1/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vZGFpbHlo/b2RsLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMS8wMS9u/ZXctZmF2b3JpdGUt/Y29pbi0xLmpwZz9y/ZXNpemU9NzUwJTJD/NDQwJnNzbD0x",
     logo:"https://lever-client-logos.s3.us-west-2.amazonaws.com/6e5a1ca3-9e5e-46a6-8a1b-1d3922060ae8-1611089122452.png",
-    description:"Decentralized Cloud Computing.",
     tags:["all","chain","tools","akash"],
+    stats: {mcap:"$45.8M",liquidity:"$1.42M",volume:"$30k",price:"$0.275"},
+    governance: [["#26 Increase the minimum commission rate to 5%", "Passed"],["#25 Cloudmos (Formerly Akashlytics) CAB Funding", "Passed"]],
+    staking:[["Delagate 16.46% APR","https://wallet.keplr.app/chains/akash"],["Osmosis LP",""]],
     link:"https://akash.network/",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
+
     },
     {
     
@@ -106,21 +111,47 @@ const articles = [
     {
     
     title:"Secret Network",
+    ticker:"SRCT",
+    description:"Secret Network is the first blockchain with customizable privacy. This protects users, and empowers developers to build a better Web3.",
     photo:"https://lh4.googleusercontent.com/h5bK8qfNE0zR7LpjcKVdMA2WhN2TkZd7m4kjZo8qygiLsBw-ZFg9nlG0b1o2YZHS7m11UKKjbCs-rjVcxP-Hp2EDK8Gwia8Q9x7t6fH3st-OnZC2tMe92KhCg0AY7HMllziBQxiG",
     logo:"https://scrt.network/secretnetwork-logo-primary-white.png",
-    description:"Secret Network is the first blockchain with customizable privacy. This protects users, and empowers developers to build a better Web3.",
+    stats: {mcap:"$174M",liquidity:"$1.69M",volume:"$174K",price:"$0.95"},
+    governance: [["Prop #113 Minimum Validator Commission Rate Parameter Signal", "Live"],["Prop #112 Increase max gas per block from 6M to 8M", "Live"]],
+    staking:[["Delagate 22.59% APR","https://wallet.keplr.app/chains/secret-network"],["Liquid 21.41% APR","https://app.shadeprotocol.io/staking-derivatives/stake"]],
     tags:["all","chain","smartcontracts","secretnetwork"],
     link:"https://scrt.network/",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
     },
     
     {
     
     title:"Stargaze",
-    photo:"https://chaindebrief.com/wp-content/uploads/2022/02/powering-interchain-nftS-on-web3.0-1024x576.png",
-    logo:"https://stake.stargaze.zone/static/media/sg-text-logo.b31e026e.png",
+    ticker:"STARS",
     description:"A decentralized, community-owned NFT Layer 1 chain and marketplace with CosmWasm smart contracts. 100% carbon neutral. Zero gas.",
+    photo:"https://chaindebrief.com/wp-content/uploads/2022/02/powering-interchain-nftS-on-web3.0-1024x576.png",
+    logo:"https://www.stargaze.zone/logo.svg",
     tags:["all","chain","nfts","stargaze"],
+    stats: {mcap:"$570M",liquidity:"$104.65M",volume:"$18.10M",price:"$1.25"},
+    governance: [["Prop #55 Stargaze Airdrop on Rowan", "deposit"],["Prop 53 Badges - NFT contract", "Passed"]],
+    staking:[["Delagate 82.52% APR","https://wallet.keplr.app/chains/stargaze"],["Liquid Coming soon","https://app.osmosis.zone/pool/1"]],
     link:"https://www.stargaze.zone/",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
     },
     {
     
@@ -135,11 +166,24 @@ const articles = [
     {
         
     title:"Evmos",
+    ticker:"evmos",
+    description:"Evmos is bringing the world of Ethereum-based applications and assets to the interoperable networks of the Cosmos ecosystem",
     photo:"https://imgs.search.brave.com/3xBcYh1M8DjReAQdFH3vxbYF4hAvjsOf_CC41K1-fD0/rs:fit:800:419:1/g:ce/aHR0cHM6Ly9zMy5h/bWF6b25hd3MuY29t/L2Fzc2V0cy5jb2lu/Z2Vja28uY29tL2Fw/cC9wdWJsaWMvY2tl/ZGl0b3JfYXNzZXRz/L3BpY3R1cmVzLzQz/NjMvY29udGVudF9l/dm1vc19jcnlwdG9f/Y292ZXIucG5n",
     logo:"https://global-uploads.webflow.com/62691815e834438f848547e0/62691815e834430f668547f4_Evmos_PrimaryLogo_Sand_RGB.svg",
-    description:"Evmos is bringing the world of Ethereum-based applications and assets to the interoperable networks of the Cosmos ecosystem",
     tags:["all","chain","evmos","smartcontracts"],
+    stats: {mcap:"$570M",liquidity:"$3.65M",volume:"$1.33M",price:"$1.83"},
+    governance: [["Prop #64 Launching the Evmos Liquidity Incentives Program", "Live"],["Prop #62 Ethermint Funding Proposal For Past Development", "Passed"]],
+    staking:[["Delagate 200% APR","https://wallet.keplr.app/chains/evmos"],["Liquid Coming soon","https://app.osmosis.zone/pool/1"]],
     link:"https://evmos.org/",
+    resources:[
+        ["Website","https://osmosis.zone/"],
+        ["Twitter","https://twitter.com/osmosiszone"],
+        ["Medium","https://medium.com/osmosis"],
+        ["Telegram","https://t.me/osmosis_chat"],
+        ["Discord","https://discord.com/invite/osmosis"],
+        ["Github","https://github.com/osmosis-labs/osmosis"],
+        ["Documentation", "https://docs.osmosis.zone/"],
+        ["Reddit", "https://www.reddit.com/r/OsmosisLab/"],],
     },
     {
         title:"SecretSwap",
@@ -161,8 +205,8 @@ const articles = [
 
     {
         title:"DAO DAO",
-        photo:"https://pbs.twimg.com/card_img/1569112772918489088/Km8aWVfD?format=jpg&name=medium",
-        logo:"https://pbs.twimg.com/card_img/1568032759875895296/p9c4O6j4?format=png&name=small",
+        photo:"https://raw.githubusercontent.com/DA0-DA0/docs/d4ee8250b2847c90edf74509f532ae47c1353368/static/img/banner.jpeg",
+        logo:"https://pbs.twimg.com/profile_images/1487643355353796610/OAvKjhNZ_400x400.jpg",
         description:"Simple, capable, and free DAO tooling. Built with love, by DAO DAO on Juno.",
         tags:["all","dao dao","juno","dapps","tools"],
         link:"https://daodao.zone/",
@@ -250,6 +294,8 @@ defi cat
 const grid = document.getElementById("grid");
     
     
+
+
 //makes articles
 function makeArticle (index){
 
@@ -321,20 +367,85 @@ function makeArticle (index){
     
 
 
+
+
+
+
+
+
+
+
+
+
 const dashboard = document.getElementsByTagName("dashboard")[0];
+const dashmaindiv = document.getElementsByTagName("dashmain")[0];
+
+
+
+function makeMainDashboard (){
+
+    dashmaindiv.innerHTML = " ";
+
+    const tophalfdash = document.createElement("div");
+    tophalfdash.className = "tophalfofdash";
+    dashmaindiv.appendChild(tophalfdash);
+
+        const dashheader = document.createElement("div");
+        dashheader.className = "chaintitle";
+        tophalfdash.appendChild(dashheader);
+    
+            const dashheaderh1 = document.createElement("h1");
+            dashheaderh1.innerHTML = "GM Diego!"; //insert code
+            dashheader.appendChild(dashheaderh1);
+
+        const optionslist = document.createElement("ul");
+        optionslist.className = "dashboardoptions";
+        tophalfdash.appendChild(optionslist);
+
+            const option1 = document.createElement("li");
+            option1.className = "selectedoption";
+            option1.innerHTML = "Overview";
+            optionslist.appendChild(option1);
+
+            const option2 = document.createElement("li");
+            option2.className = "notselectedoption";
+            option2.innerHTML = "Assets";
+            optionslist.appendChild(option2);
+
+            const option3 = document.createElement("li");
+            option3.className = "notselectedoption";
+            option3.innerHTML = "Staking";
+            optionslist.appendChild(option3);
+
+            const option4 = document.createElement("li");
+            option4.className = "notselectedoption";
+            option4.innerHTML = "Governance";
+            optionslist.appendChild(option4);
+
+            const option5 = document.createElement("li");
+            option5.className = "notselectedoption";
+            option5.innerHTML = "NFT's";
+            optionslist.appendChild(option5);
+
+    const dashboardslides = document.createElement("div");
+    dashboardslides.className = "dashboardslides";
+    tophalfdash.appendChild(dashboardslides);
+
+
+    }
+
+
+
 
 function makeChainDash (chain) {
 
     let picker = chain;
-
-    const dashdiv = document.createElement("div");
-    dashdiv.className = "chainexplorer";
-    dashboard.appendChild(dashdiv);
+    dashmaindiv.innerHTML = " ";
 
     //creates the Title of Dash
         const titlediv = document.createElement("div");
         titlediv.className = "chaintitle";
-        dashdiv.appendChild(titlediv);
+        dashmaindiv.appendChild(titlediv);
 
         const chainlogo = document.createElement("img");
         chainlogo.src = articles[picker].logo;
@@ -350,7 +461,7 @@ function makeChainDash (chain) {
 
     const statsmaindiv = document.createElement("div");
     statsmaindiv.className = "chaininfo";
-    dashdiv.appendChild(statsmaindiv);
+    dashmaindiv.appendChild(statsmaindiv);
 
 
 
@@ -558,7 +669,16 @@ function makeChainDash (chain) {
 }
 
 
+
+
+
+
+
+
+makeMainDashboard();
+
 // makeChainDash(1);
+
 
 
 
@@ -623,6 +743,8 @@ function makeChainDash (chain) {
 
 
 function displayAllArticles(){
+
+    grid.innerHTML = " ";
 
     var listOfElements = [];
 
@@ -701,18 +823,14 @@ let listtoggle = true;
 
 dropbtn.forEach( function (btns){
 
-    console.log(btns)
-
-    
-
    btns.addEventListener("click", function (e) {
-
 
         epicEvent = e.currentTarget;
 
+
         tagIndexLogic(epicEvent);
 
-        
+        themeSwitch(epicEvent.classList[2])       
     })
 
 });
@@ -1078,6 +1196,76 @@ let osmosisChainTheme = `
 `;
 
 let rocketshipTheme = `
+--backgroundColor: #000000;
+--navbarcolor:  linear-gradient(90deg,#eb5d47,#a933b2,#a4f9ff);
+
+--boxcolor:  #a933b2;   
+--lighterbackfill:  #000000; 
+
+--fontcolor:rgb(255, 255, 255);
+--accentoutline:  #a4f9ff; 
+
+
+`;
+
+let junoChainTheme = `
+--backgroundColor:#9d3b58;
+--navbarcolor:#F56457;
+
+--boxcolor: #f0827d;
+--lighterbackfill: #ef9894;
+
+--fontcolor:rgb(255, 255, 255);
+--accentoutline: rgb(255, 0, 93);
+`;
+
+let secretNetworkChainTheme = `
+--backgroundColor: #151a1f;
+--navbarcolor:  #000000; 
+
+--boxcolor: #2f3c4a;
+--lighterbackfill: #2f3c4a ;
+
+--fontcolor: #ffffff;
+--accentoutline:  #4bbeb3; 
+`;
+
+let akashChainTheme = `
+--backgroundColor: rgb(30, 5, 8);
+--navbarcolor: rgb(219, 26, 28);
+
+--boxcolor: rgb(170, 26, 28);
+--lighterbackfill:rgb(170, 25, 19);
+
+--fontcolor:rgb(255, 255, 255);
+--accentoutline:  #ff5353;
+`;
+
+
+let evmosChainTheme = `
+--backgroundColor: #000000;
+--navbarcolor:  #444137; 
+
+--boxcolor: rgb(219, 55, 39);
+--lighterbackfill: rgb(105, 105, 105);
+
+--fontcolor:rgb(255, 255, 255);
+--accentoutline: rgb(237, 84, 30);
+`;
+
+let cresentChainTheme = `
+--backgroundColor: #231210;
+--navbarcolor:  #000000;
+
+--boxcolor:rgb(255, 187, 108);
+--lighterbackfill: #371814;
+
+--fontcolor:rgb(255, 255, 255);
+--accentoutline:  rgb(252, 129, 13);
+`;
+
+let stargazeChainTheme = `
+
 --backgroundColor: #141010;
 --navbarcolor:  #f70776; 
 
@@ -1087,39 +1275,63 @@ let rocketshipTheme = `
 --fontcolor:rgb(255, 255, 255);
 --accentoutline:  #680747; 
 
-
 `;
-
 
 
 const headTag = document.getElementsByTagName('head')[0];
 const styleTag = document.createElement("style");
 
 
-// function themeSwap (theme){
+function themeSwap (theme){
 
-//     styleTag.innerHTML = ` :root{ ${theme} }`;
-//     headTag.appendChild(styleTag);
+    styleTag.innerHTML = ` :root{ ${theme} }`;
+    headTag.appendChild(styleTag);
 
-// }
+}
 
-// function themeSwitch (themename){
 
-//     //if you choose chain & name then change theme
+function themeSwitch (themename){
 
-//     switch(themename) {    
-//         case "default": 
-//         answer = themeSwap(rocketshipTheme);;
-//         break;
-//       case "osmosis": 
-//         answer = themeSwap(rocketshipTheme);;
-//         break;
-//       case "juno": 
-//         answer = zToA (articleIndexAndTitle);
-//         break;
-//     }
-//     return answer;
-// }
+    //if you choose chain & name then change theme
+
+    switch(themename) {    
+
+      case "osmosis": 
+        answer = themeSwap(osmosisChainTheme);
+        makeChainDash(0);
+        break;
+      case "juno": 
+        answer = themeSwap(junoChainTheme);
+        makeChainDash(1);
+        break;
+        case "secretnetwork": 
+        answer = themeSwap(secretNetworkChainTheme);
+        makeChainDash(5);
+        break;
+        case "akash": 
+        answer = themeSwap(akashChainTheme);
+        makeChainDash(3);
+        break;
+        case "evmos": 
+        answer = themeSwap(evmosChainTheme);
+        makeChainDash(8);
+        break;
+        case "cresent": 
+        answer = themeSwap(cresentChainTheme);
+        makeChainDash(2);
+        break;
+        case "stargaze": 
+        answer = themeSwap(stargazeChainTheme);
+        makeChainDash(6);
+        break;
+
+        default:
+        answer = themeSwap(rocketshipTheme);
+        displayAllArticles();
+        break;
+    }
+    return "theme Switch activated";
+}
 
 
 
