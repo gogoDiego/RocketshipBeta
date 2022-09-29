@@ -100,6 +100,18 @@ Cresent Theme
     --fontcolor:rgb(255, 255, 255);
     --accentoutline:  rgb(252, 129, 13);
 
+Secret Network
+   --backgroundColor: url("https://images.unsplash.com/photo-1520531158340-44015069e78e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmxhY2slMjBhbmQlMjB3aGl0ZSUyMGNpdHl8ZW58MHx8MHx8&w=1000&q=80");
+
+    --backgroundColor: #151a1f;
+    --navbarcolor:  #000000; 
+
+    --boxcolor: #2f3c4a;
+    --lighterbackfill: #2f3c4a ;
+
+    --fontcolor: #ffffff;
+    --accentoutline:  #4bbeb3; 
+
 
 */
 
@@ -107,8 +119,9 @@ Cresent Theme
 
 body {
 
-background-color: var(--backgroundColor)
-
+    background: var(--backgroundColor);
+    background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
