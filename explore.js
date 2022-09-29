@@ -355,7 +355,7 @@ function makeArticle (index){
 
     const infobtn = document.createElement("input");
     infobtn.className = "explorebtns info";
-    infobtn.value = "Info";
+    infobtn.value = "Blocks";
     infobtn.type = "button";
     explorediv.appendChild(infobtn);
 
@@ -512,7 +512,7 @@ function makeChainDash (chain) {
         tokenstats.appendChild(pricevalue);
     
     const tempchartimage = document.createElement("img");
-    tempchartimage.src = "demochart.png"; //INSERT CODE FOR chart
+    tempchartimage.src = "Rocketship chart demo.png"; //INSERT CODE FOR chart
     tempchartimage.className = "tempchartimage";
     chaintokenstats.appendChild(tempchartimage);
 
@@ -830,7 +830,7 @@ dropbtn.forEach( function (btns){
 
         tagIndexLogic(epicEvent);
 
-        themeSwitch(epicEvent.classList[2])       
+              
     })
 
 });
@@ -1161,7 +1161,7 @@ function tagIndexLogic (epic){
 
 
 
-
+        themeSwitch(epicEvent.classList[2]) 
         displaySearch(epic);
     }
     
@@ -1209,7 +1209,9 @@ let rocketshipTheme = `
 `;
 
 let junoChainTheme = `
---backgroundColor:#9d3b58;
+
+
+--backgroundColor: url("https://user-images.githubusercontent.com/79812965/131373443-5ff0d9f6-2e2a-41bd-8347-22ac4983e625.jpg");
 --navbarcolor:#F56457;
 
 --boxcolor: #f0827d;
@@ -1243,7 +1245,7 @@ let akashChainTheme = `
 
 
 let evmosChainTheme = `
---backgroundColor: #000000;
+--backgroundColor: url("https://app.evmos.org/bg.svg");
 --navbarcolor:  #444137; 
 
 --boxcolor: rgb(219, 55, 39);
@@ -1326,8 +1328,8 @@ function themeSwitch (themename){
         break;
 
         default:
-        answer = themeSwap(rocketshipTheme);
-        displayAllArticles();
+        themeSwap(rocketshipTheme);
+        makeMainDashboard();
         break;
     }
     return "theme Switch activated";
@@ -1354,28 +1356,28 @@ function themeSwitch (themename){
 
 //make a favorites star feature
 //when clicking any filter buttons reset the others
+//make check filter, pick something like tools > evmos 
+//make explore blocks clickable
+//make a trending, TVL, sort
+//make different displays currently we have the article, but maybe 
+    //square app icons, or more compact view 
+//make display options, like by 6, 8, 10, 100, or Infinite
+//chain tag,
+//when clicking on article, pull up
 
+//start mapping out a block explorer
 
-//flip the cards to learn about more,
-    //chains has token, mcap, volume, chart, rank
-    //smartcontracts has home, token, 
-    //nfts has amount floor etc
-
-    //make explore blocks clickable
-
-//make a homepage dashboard
-    //chain dashboard has price chart, volume, ticker, etc
-
-//make a trending tag
-//make our theme, and juno, osmosis, etc chain themes
 
 //Chain Dashboard
-    //make token chart
+    //make token chart (trading view light)
     //make governance clickable
     //make staking buttons clickable
     //make resources clickable
 
 
+//optimize for mobile
+
 
 //bugs
     //fix search bug, when searching "all" btn dissapears
+    //fix search bug, when searching for chains, only pulls up banners that are even
